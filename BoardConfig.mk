@@ -16,6 +16,9 @@
 
 LOCAL_PATH := device/samsung/heatqlte
 
+include $(LOCAL_PATH)/kernel.mk
+include device/generic/twrpbuilder/BoardConfig32.mk
+
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOOTLOADER_BOARD_NAME := heatqlte
 
@@ -30,6 +33,4 @@ BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-include $(LOCAL_PATH)/kernel.mk
-include device/generic/twrpbuilder/BoardConfig32.mk
-
+BOARD_CUSTOM_BOOTIMG_MK := device/generic/twrpbuilder/seEnforcing.mk
